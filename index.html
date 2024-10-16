@@ -19,12 +19,13 @@
                 <li class="link"><a href="#home">Home</a></li>
                 <li class="link"><a href="#choose">Categories</a></li>
                 <li class="link"><a href="#craft">Best Sellers</a></li>
-                <li class="link"><a href="#testimonial">About</a></li>
+                <li class="link"><a href="#about">About</a></li>
             </ul>
             <div class="nav__actions">
-                <span><i class="ri-search-fill"></i></span>
-                <span><i class="ri-user-fill"></i></span>
+                <a href="login.html" class="btn-signin">Sign In</a>
+                <a href="register.html" class="btn-signup">Sign Up</a>
             </div>
+
         </nav>
         <div class="section__container header__container" id="home">
             <h1>Explore High Quality
@@ -38,6 +39,7 @@
             </form>
         </div>
     </header>
+    <div id="snackbar">Harus login terlebih dahulu!</div>
 
     <section class="section__container craft__container" id="craft">
         <div class="craft__content">
@@ -52,17 +54,16 @@
                 <img src="/assets/img/akio-font.png" alt="craft" />
                 <p>Font Hiroshi</p>
                 <h4>Rp65,000</h4>
+                <a href="#" class="add-to-cart"><i class="ri-add-line"></i></a>
             </div>
-            <a href="#"><i class="ri-add-line"></i></a>
         </div>
         <div class="craft__image">
             <div class="craft__image__content">
                 <img src="/assets/img/akio-font.png" alt="craft" />
                 <p>Font Hiroshi</p>
                 <h4>Rp65,000</h4>
+                <a href="#" class="add-to-cart"><i class="ri-add-line"></i></a>
             </div>
-            <a href="#"><i class="ri-add-line"></i></a>
-        </div>
     </section>
 
     <footer class="footer">
@@ -78,44 +79,49 @@
             </ul>
         </div>
     </footer>
+
     <script>
-        const menuBtn = document.getElementById("menu-btn");
-        const navLinks = document.getElementById("nav-links");
-        const menuBtnIcon = menuBtn.querySelector("i");
+        let isLoggedIn = false;
 
-        menuBtn.addEventListener("click", () => {
-            navLinks.classList.toggle("open");
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        const cartCountDisplay = document.getElementById('cart-count');
+        let cartCount = 0;
 
-            const isOpen = navLinks.classList.contains("open");
-            menuBtnIcon.setAttribute("class", isOpen ? "ri-close-line" : "ri-menu-line");
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', (event) => {
+                event.preventDefault();
+
+                if (!isLoggedIn) {
+                    alert('Harus login terlebih dahulu!');
+                } else {
+                    cartCount++;
+                    cartCountDisplay.textContent = cartCount;
+                    alert('Item added to cart!');
+                }
+            });
         });
 
-        navLinks.addEventListener("click", () => {
-            navLinks.classList.remove("open");
-            menuBtnIcon.setAttribute("class", "ri-menu-line");
+        const exploreButton = document.querySelector('.btn');
+        const snackbar = document.getElementById('snackbar');
+
+        exploreButton.addEventListener('click', (event) => {
+            event.preventDefault();
+            if (!isLoggedIn) {
+                showSnackbar();
+            } else {
+                alert("Explore section accessed!");
+            }
         });
 
-        const scrollRevealOption = {
-            distance: "50px",
-            origin: "bottom",
-            duration: 1000,
-        };
-
-        ScrollReveal().reveal(".header__container h1", {
-            ...scrollRevealOption,
-        });
-
-        ScrollReveal().reveal(".header__container p", {
-            ...scrollRevealOption,
-            delay: 500,
-        });
-
-        ScrollReveal().reveal(".header__container form", {
-            ...scrollRevealOption,
-            delay: 1000,
-        });
-
+        function showSnackbar() {
+            snackbar.classList.add("show");
+            setTimeout(() => {
+                snackbar.classList.remove("show");
+            }, 3000);
+        }
     </script>
+
+
 </body>
 
 </html>

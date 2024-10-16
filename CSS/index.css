@@ -21,18 +21,6 @@
   padding: 5rem 1rem;
 }
 
-.section__header {
-  margin-bottom: 1rem;
-  font-size: 2.5rem;
-  font-weight: 700;
-  font-family: var(--header-font);
-  color: var(--text-dark);
-}
-
-.section__subheader {
-  color: var(--text-light);
-}
-
 .btn {
   padding: 0.75rem 2rem;
   font-size: 1rem;
@@ -141,6 +129,26 @@ nav {
   align-items: center;
   justify-content: flex-end;
   gap: 2rem;
+}
+
+.btn-signin,
+.btn-signup {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.45);
+  color: white;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.btn-signup {
+  background-color: #008cba;
+}
+
+.btn-signin:hover,
+.btn-signup:hover {
+  opacity: 0.8;
 }
 
 .nav__actions span {
@@ -253,6 +261,7 @@ nav {
 }
 
 .craft__image__content p {
+  margin-top: 10px;
   font-size: 1rem;
   font-weight: 500;
   color: var(--text-dark);
@@ -323,6 +332,72 @@ nav {
   font-weight: 500;
   color: var(--white);
   white-space: nowrap;
+}
+
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  background-color: red;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+  font-size: 17px;
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
 }
 
 @media (max-width: 1024px) {
