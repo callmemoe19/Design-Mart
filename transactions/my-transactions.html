@@ -105,6 +105,65 @@
             </div>
         </div>
     </section>
+
+    <!-- Popup Box for Details -->
+    <div id="detailsPopup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <h2>Transaction Details</h2>
+            <p><strong>Product:</strong> <span id="productName"></span></p>
+            <p><strong>Type:</strong> <span id="productType"></span></p>
+            <p><strong>Price:</strong> <span id="price"></span></p>
+            <p><strong>Status:</strong> <span id="status"></span></p>
+            <p><strong>Description:</strong> <span id="description"></span></p>
+        </div>
+    </div>
+
+
+    <script>
+        const detailsPopup = document.getElementById('detailsPopup');
+        const detailsBtn = document.querySelector('.details-btn');
+        const closeBtn = document.querySelector('.close-btn');
+
+        // Fungsi untuk mengambil dan menampilkan data transaksi
+        async function showTransactionDetails() {
+            try {
+                // Mengambil data dari file JSON
+                const response = await fetch('/data/transaction.json');
+                if (!response.ok) throw new Error('Data not found');
+                const data = await response.json();
+
+                // Menampilkan data ke dalam popup
+                document.getElementById('productName').textContent = data.transaction.productName;
+                document.getElementById('productType').textContent = data.transaction.productType;
+                document.getElementById('price').textContent = data.transaction.price;
+                document.getElementById('status').textContent = data.transaction.status;
+                document.getElementById('description').textContent = data.transaction.description;
+
+                // Tampilkan popup
+                detailsPopup.style.display = 'flex';
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        }
+
+        // Event listener pada tombol Details
+        detailsBtn.addEventListener('click', showTransactionDetails);
+
+        // Sembunyikan popup ketika tombol X ditekan
+        closeBtn.addEventListener('click', () => {
+            detailsPopup.style.display = 'none';
+        });
+
+        // Sembunyikan popup jika area di luar konten popup diklik
+        window.addEventListener('click', (e) => {
+            if (e.target === detailsPopup) {
+                detailsPopup.style.display = 'none';
+            }
+        });
+    </script>
+
+
 </body>
 
 </html>
