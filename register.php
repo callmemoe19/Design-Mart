@@ -38,7 +38,7 @@
 
                 <button type="submit" class="btn-sign-up">Sign Up</button>
                 <div class="sign-in-my-account">
-                    <a href="login.html"><b>Sign In to My Account</b></a>
+                    <a href="login.php"><b>Sign In to My Account</b></a>
                 </div>
             </form>
         </div>

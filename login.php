@@ -37,7 +37,7 @@
 
                 <button type="submit" class="btn">Sign In</button>
                 <div class="create-account">
-                    <a href="register.html"><b>Create New Account</b></a>
+                    <a href="register.php"><b>Create New Account</b></a>
                 </div>
             </form>
         </div>

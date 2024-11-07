@@ -24,7 +24,7 @@
                 <div class="menu-separator"></div>
             </h4>
             <li>
-                <a href="/index.html">
+                <a href="/index.php">
                     <span class="material-symbols-outlined">
                         home
                     </span>Home</a>
@@ -36,7 +36,7 @@
                     </span>Overview</a>
             </li>
             <li>
-                <a href="/transactions/my-transactions.html">
+                <a href="/transactions/my-transactions.php">
                     <span class="material-symbols-outlined">
                         credit_card
                     </span>My Transactions</a>
@@ -66,7 +66,7 @@
                     </span>Settings</a>
             </li>
             <li>
-                <a href="/login.html">
+                <a href="/login.php">
                     <span class="material-symbols-outlined">
                         logout
                     </span>Log Out</a>
