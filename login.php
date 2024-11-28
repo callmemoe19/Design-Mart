@@ -18,11 +18,11 @@
                 <h2>Welcome Back!</h2>
                 <p>Please input your details information.</p>
             </div>
-            <form action="#" method="post">
+            <form action="login-proses.php" method="post">
 
                 <div class="input-group">
                     <img src="assets/Email.svg" alt="Email Icon">
-                    <input type="email" id="email" name="email" placeholder="Email" required>
+                    <input type="text" id="username" name="username" placeholder="Username" required>
                 </div>
 
                 <div class="input-group">

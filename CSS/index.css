@@ -59,7 +59,7 @@ header {
       rgba(0, 0, 0, 0.8),
       rgba(0, 0, 0, 0.2)
     ),
-    url("/assets/img/hero-image.png");
+    url("../assets/img/hero-image.png");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;

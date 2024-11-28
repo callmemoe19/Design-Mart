@@ -51,7 +51,7 @@
         </div>
         <div class="craft__image">
             <div class="craft__image__content">
-                <img src="\assets\img\akio-font.png" alt="craft" />
+                <img src="assets/img/akio-font.png" alt="craft" />
                 <p>Font Hiroshi</p>
                 <h4>Rp65,000</h4>
                 <a href="#" class="add-to-cart"><i class="ri-add-line"></i></a>
@@ -59,7 +59,7 @@
         </div>
         <div class="craft__image">
             <div class="craft__image__content">
-                <img src="/assets/img/akio-font.png" alt="craft" />
+                <img src="assets/img/akio-font.png" alt="craft" />
                 <p>Font Hiroshi</p>
                 <h4>Rp65,000</h4>
                 <a href="#" class="add-to-cart"><i class="ri-add-line"></i></a>
