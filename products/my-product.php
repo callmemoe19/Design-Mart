@@ -46,9 +46,9 @@ $result = $stmt->get_result();
                 <div class="menu-separator"></div>
             </h4>
             <li><a href="/index.php"><span class="material-symbols-outlined">home</span>Home</a></li>
-            <li><a href=""><span class="material-symbols-outlined">overview</span>Overview</a></li>
-            <li><a href="/transactions/my-transactions.php"><span class="material-symbols-outlined">credit_card</span>My Transactions</a></li>
-            <li><a href=""><span class="material-symbols-outlined">local_mall</span>My Orders</a></li>
+            <li><a href="../dashboard.php"><span class="material-symbols-outlined">overview</span>Overview</a></li>
+            <li><a href="../product_orders/my-transactions.php"><span class="material-symbols-outlined">credit_card</span>My Transactions</a></li>
+            <li><a href="../product_orders/my-orders.php"><span class="material-symbols-outlined">local_mall</span>My Orders</a></li>
             <li><a href="" id="myProductLink"><span class="material-symbols-outlined">inventory_2</span>My Products</a></li>
             <h4><span>Others</span>
                 <div class="menu-separator"></div>
